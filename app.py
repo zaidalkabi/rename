@@ -67,8 +67,7 @@ if uploaded_files:
             # Resize if image is too small to improve OCR accuracy
             gray = cv2.resize(gray, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_CUBIC)
             # Apply adaptive thresholding to make text pop out
-            enhanced_img = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
-            
+           enhanced_img = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
             # Run EasyOCR on enhanced image
             results = reader.readtext(enhanced_img)
             
