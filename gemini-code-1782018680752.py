@@ -7,7 +7,7 @@ import os
 import re
 
 # إعداد قارئ النصوص (يدعم الإنجليزية)
-reader = easyocr.Reader(['en'])
+reader = easyocr.Reader(['en'], model_storage_directory='/tmp')
 
 st.title("تطبيق إعادة تسمية الصور التلقائي")
 st.write("ارفع صورك هنا، وسيقوم التطبيق بقراءة التسمية وضغطها في ملف ZIP")
